@@ -21,12 +21,14 @@
 
     var trainName = $("#train-input").val().trim();
     var trainDestination = $("#destination-input").val().trim();
-    var trainFrequency= $("#frequency-input").val().trim();
+    var trainFirst = $("#first-train-input").val().trim();
+    var trainFrequency = $("#frequency-input").val().trim();
 
 // Storing new trains
     var newTrain = {
       train: trainName,
       destination: trainDestination,
+      firstTrain: trainFirst,
       frequency: trainFrequency
     };
 
@@ -38,6 +40,7 @@
 // Clear fields so new train can be added    
     $("#train-input").val("")
     $("#destination-input").val("")
+    $("#first-train-input").val("")
     $("#frequency-input").val("")
 
     });
@@ -61,22 +64,25 @@ function getTrainTime(t, f) {
 
   return [first.format("HH:mm"), (first.diff(now, 'minutes'))];
 };
-
+// Using the ChildAdded event listener helps retrieve lists of items or listen for additions to a list of items. 
   database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
+// Using childSnapshot.val() is a way to retrive database data 
   var trainName = childSnapshot.val().train;
   var trainDestination = childSnapshot.val().destination;
+  var trainFirst = childSnapshot.val().firstTrain;
   var trainFrequency = childSnapshot.val().frequency;
 
-  var trainArrival = getTrainTime(trainFrequency)[0];
-  var trainMinutesAway = getTrainTime(trainFrequency)[1];
+  var trainArrival = getTrainTime(trainFirst, trainFrequency)[0];
+  var trainMinutesAway = getTrainTime(trainFirst, trainFrequency)[1];
 
   $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + trainDestination + "</td><td>" + trainFrequency + "</td><td>" + trainArrival + "</td><td>" + trainMinutesAway + "</td></tr>");
 
   });
 
   
-  
+  // Below is reference example for self-learning reinforcement
+  // ==========================================================
       // Assumptions
       var tFrequency = 3;
   
