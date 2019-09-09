@@ -1,5 +1,5 @@
 
-    // Initialize Firebase using Candice's snippet
+// Initialize Firebase using Candice's snippet
     var config = {
         apiKey: "AIzaSyDA3PyLqYQGvRVGv0p17VnM2tTtd_l4g_c",
         authDomain: "uw-coding-bootcamp-2525e.firebaseapp.com",
@@ -14,7 +14,6 @@
   
       var database = firebase.database();
   
-
  // Button for adding a train
  $("#add-train-btn").on("click", function(event) {
     event.preventDefault();

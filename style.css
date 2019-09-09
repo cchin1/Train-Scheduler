@@ -38,3 +38,18 @@
 body {
     background-color: rgb(67, 99, 89);
 }
+
+.jumbotron {
+  background-color: aquamarine;
+  height: 200px;
+}
+
+.jumbotron h1 {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.jumbotron h2 {
+  font-weight: bold;
+  color: green;
+}
