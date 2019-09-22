@@ -1,6 +1,8 @@
 # Train-Scheduler
 UW Coding Bootcamp HW 07-Week
-The Goal of this assignment is to setup a Firecase key to store data; create a front end in which a user can enter data, which in turn populates a train schedule; and use Moment.js to create formulas to calculate time to arrival, etc.
+The Goal of this assignment is to setup a Firebase key to store data; create a front end in which a user can enter data, which in turn populates a train schedule; and use Moment.js to create formulas to calculate time to arrival, etc.
+
+https://cchin1.github.io/Train-Scheduler/
 
 ## Technologies Used
 HTML, CSS, Javascript, jQuery, Bootstrap, Firebase and the Moment.js library.
